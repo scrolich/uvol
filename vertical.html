@@ -6,150 +6,60 @@
     <title>Вертикальный формат</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
             background: #f5f0e8;
             color: #3d3222;
             min-height: 100vh;
         }
-
         .back-link {
-            position: fixed;
-            top: 27px;
-            right: 30px;
-            z-index: 30;
-            color: #5c4a32;
-            text-decoration: none;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            border: 1px solid #5c4a32;
-            padding: 8px 18px;
-            border-radius: 2px;
-            transition: all 0.3s;
-            background: rgba(245, 240, 232, 0.7);
+            position: fixed; top: 27px; right: 30px; z-index: 30;
+            color: #5c4a32; text-decoration: none; font-size: 0.7rem;
+            text-transform: uppercase; letter-spacing: 0.2em;
+            border: 1px solid #5c4a32; padding: 8px 18px; border-radius: 2px;
+            transition: all 0.3s; background: rgba(245,240,232,0.7);
             backdrop-filter: blur(6px);
         }
-
-        .back-link:hover {
-            background: #5c4a32;
-            color: #f5f0e8;
-        }
-
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 100px 30px 60px;
-        }
-
+        .back-link:hover { background: #5c4a32; color: #f5f0e8; }
+        .container { max-width: 500px; margin: 0 auto; padding: 100px 30px 60px; }
         h1 {
-            font-size: 1.6rem;
-            font-weight: 300;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: #5c4a32;
-            margin-bottom: 50px;
-            text-align: center;
+            font-size: 1.6rem; font-weight: 300; letter-spacing: 0.06em;
+            text-transform: uppercase; color: #5c4a32; margin-bottom: 50px; text-align: center;
         }
-
-        .video-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: center;
+        .video-grid { display: flex; flex-direction: column; gap: 40px; align-items: center; }
+        .video-wrap {
+            width: 100%; max-width: 400px; aspect-ratio: 9 / 16;
+            border-radius: 8px; overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15); background: #000;
         }
-
-        video {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 8px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            background: #000;
-            aspect-ratio: 9 / 16;
-            object-fit: cover;
-        }
-
+        .video-wrap iframe { width: 100%; height: 100%; border: none; }
         @media (max-width: 768px) {
-            .container {
-                padding: 80px 16px 40px;
-            }
-
-            h1 {
-                font-size: 1.2rem;
-                margin-bottom: 30px;
-            }
-
-            .video-grid {
-                gap: 30px;
-            }
-
-            video {
-                max-width: 100%;
-            }
-
-            .back-link {
-                top: 16px;
-                right: 16px;
-                font-size: 0.6rem;
-                padding: 6px 12px;
-            }
+            .container { padding: 80px 16px 40px; }
+            h1 { font-size: 1.2rem; margin-bottom: 30px; }
+            .video-grid { gap: 30px; }
+            .video-wrap { max-width: 100%; }
+            .back-link { top: 16px; right: 16px; font-size: 0.6rem; padding: 6px 12px; }
         }
     </style>
 </head>
 <body>
-
     <a href="projects.html" class="back-link">← Назад</a>
-
     <div class="container">
         <h1>Вертикальный формат</h1>
-        <div class="video-grid" id="videoGrid"></div>
+        <div class="video-grid">
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/SExt7YIIKC8" allowfullscreen></iframe>
+            </div>
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/j6IerY2BIAY" allowfullscreen></iframe>
+            </div>
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/AZQXw0c70ZY" allowfullscreen></iframe>
+            </div>
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/kh6DyOympfo" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
-
-    <script>
-        const videos = [
-            "https://disk.yandex.ru/a/qs2uj4wj4QIhBA",
-            "https://disk.yandex.ru/i/x-QUA0LzGwWksQ",
-            "https://disk.yandex.ru/i/goz6Bq2ODcFCaA",
-            "https://disk.yandex.ru/i/TFdCypeWs1PW7Q",
-            "https://disk.yandex.ru/i/Si4i6JltXout9g",
-            "https://disk.yandex.ru/i/Q5-RiZ0LKwAYhw",
-            "https://disk.yandex.ru/i/b4SJBmdJTRQ8qw",
-            "https://disk.yandex.ru/i/YDC2M24_fkZPEQ",
-            "https://disk.yandex.ru/i/exYnuiGRmd6nQQ",
-            "https://disk.yandex.ru/i/5WSesfP59IaK4w",
-            "https://disk.yandex.ru/i/IwgRLD5FZO0L6g",
-            "https://disk.yandex.ru/i/Wp_t5gTPvEbsJQ",
-            "https://disk.yandex.ru/i/1VYrpP8n4sJ7Ew",
-            "https://disk.yandex.ru/i/Kb7Tl6nw9jpO3A",
-            "https://disk.yandex.ru/i/6OWGihco3r8a4A",
-            "https://disk.yandex.ru/i/ln_6LevyUBXPMQ",
-            "https://disk.yandex.ru/i/rp_NsfpX8_pzSw"
-        ];
-
-        const grid = document.getElementById('videoGrid');
-
-        videos.forEach((url, i) => {
-            const wrapper = document.createElement('div');
-            wrapper.style.width = '100%';
-            wrapper.style.maxWidth = '400px';
-            wrapper.style.aspectRatio = '9 / 16';
-            wrapper.style.borderRadius = '8px';
-            wrapper.style.overflow = 'hidden';
-            wrapper.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
-            wrapper.style.background = '#000';
-
-            const iframe = document.createElement('iframe');
-            iframe.src = url.replace('/i/', '/public?').replace('/a/', '/public?') + '&autoplay=0';
-            iframe.width = '100%';
-            iframe.height = '100%';
-            iframe.allow = 'autoplay; fullscreen';
-            iframe.style.border = 'none';
-            iframe.allowFullscreen = true;
-
-            wrapper.appendChild(iframe);
-            grid.appendChild(wrapper);
-        });
-    </script>
 </body>
 </html>
