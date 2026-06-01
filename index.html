@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>творческое объединение</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f0e8;
+            color: #3d3222;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .splash {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .splash-logo {
+            width: 140px;
+            height: auto;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards;
+            pointer-events: none;
+        }
+
+        .splash-text {
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #5c4a32;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease 0.6s forwards;
+        }
+
+        .splash-sub {
+            font-size: 0.65rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #b8a68b;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease 1.0s forwards;
+        }
+
+        .splash-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, #c9a96e, transparent);
+            opacity: 0;
+            animation: fadeInUp 1.2s ease 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hint {
+            position: fixed;
+            bottom: 40px;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            color: #c9a96e;
+            animation: pulse 2s ease 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="splash" onclick="enterSite()">
+        <img src="111.png" alt="Логотип" class="splash-logo">
+        <div class="splash-line"></div>
+        <div class="splash-text">Добро пожаловать</div>
+        <div class="splash-sub">творческое объединение</div>
+    </div>
+
+    <div class="hint">нажмите, чтобы войти</div>
+
+    <script>
+        document.body.addEventListener('click', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.6s ease';
+            setTimeout(function() {
+                window.location.href = 'projects.html';
+            }, 600);
+        });
+    </script>
+</body>
+</html>

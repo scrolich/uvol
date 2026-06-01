@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документальные короткие метры</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f0e8;
+            color: #3d3222;
+            min-height: 100vh;
+        }
+
+        .back-link {
+            position: fixed;
+            top: 27px;
+            right: 30px;
+            z-index: 30;
+            color: #5c4a32;
+            text-decoration: none;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            border: 1px solid #5c4a32;
+            padding: 8px 18px;
+            border-radius: 2px;
+            transition: all 0.3s;
+            background: rgba(245, 240, 232, 0.7);
+            backdrop-filter: blur(6px);
+        }
+
+        .back-link:hover {
+            background: #5c4a32;
+            color: #f5f0e8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px 30px 60px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 300;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #5c4a32;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .video-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .video-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .video-title {
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            color: #8b7355;
+            margin-bottom: 16px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: #000;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 80px 16px 40px;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+            }
+
+            .video-grid {
+                gap: 40px;
+            }
+
+            .back-link {
+                top: 16px;
+                right: 16px;
+                font-size: 0.6rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="projects.html" class="back-link">← Назад</a>
+
+    <div class="container">
+        <h1>Документальные короткие метры</h1>
+        <div class="video-grid">
+            <div class="video-item">
+                <div class="video-title">Олег Карлсон</div>
+                <video controls preload="metadata">
+                    <source src="doc/Олег Карлсон.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-item">
+                <div class="video-title">Форма Меры</div>
+                <video controls preload="metadata">
+                    <source src="doc/Форма Меры.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
