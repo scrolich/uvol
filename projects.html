@@ -226,17 +226,26 @@
 
         const strip = document.getElementById('filmStrip');
 
-        projects.forEach(p => {
-            const frame = document.createElement('div');
-            frame.className = 'frame';
-            frame.innerHTML = `
-              <div class="frame-title">${p.title}</div>
-              <div class="frame-img-wrap">
-                <img src="${p.img}" alt="${p.title}" loading="lazy">
-              </div>
-            `;
-            strip.appendChild(frame);
-        });
+                projects.forEach(p => {
+                    const frame = document.createElement('a');
+                    frame.className = 'frame';
+                    frame.href = p.link;
+                    frame.style.textDecoration = 'none';
+                    frame.style.color = 'inherit';
+                    frame.style.display = 'block';
+                    frame.style.flexShrink = '0';
+                    frame.style.width = '420px';
+                    frame.style.marginRight = '80px';
+                    frame.style.position = 'relative';
+                    frame.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1)';
+                    frame.innerHTML = `
+                    <div class="frame-title">${p.title}</div>
+                    <div class="frame-img-wrap">
+                        <img src="${p.img}" alt="${p.title}" loading="lazy">
+                    </div>
+                    `;
+                    strip.appendChild(frame);
+                });
     </script>
 </body>
 </html>
